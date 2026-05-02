@@ -10,7 +10,7 @@ Use this command when you finish a work session:
 
 The workflow will:
 
-- update `environment.yml` from the Conda environment named in that file
+- update `environment.yml` from the `rating-dist-env` Conda environment
 - create a dated markdown log in `session_logs/`
 - commit all trackable changes
 - push the commit to GitHub

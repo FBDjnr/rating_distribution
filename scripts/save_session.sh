@@ -89,6 +89,7 @@ fi
 repo_root="$(git rev-parse --show-toplevel)"
 cd "${repo_root}"
 
+project_env_name="rating-dist-env"
 timestamp="$(date +"%Y-%m-%d_%H-%M-%S")"
 pretty_date="$(date +"%Y-%m-%d %H:%M:%S %Z")"
 log_file="session_logs/${timestamp}.md"
@@ -110,8 +111,8 @@ ERROR
     exit 1
   fi
 
-  env_name="${CONDA_ENV:-${CONDA_DEFAULT_ENV:-}}"
-  if [[ -z "${env_name}" ]]; then
+  env_name="${CONDA_ENV:-${project_env_name}}"
+  if [[ -z "${env_name}" || "${env_name}" == "base" ]]; then
     env_name="$(env_name_from_file || true)"
   fi
 
