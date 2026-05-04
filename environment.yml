@@ -5,9 +5,16 @@ dependencies:
   - python=3.12
   - numpy
   - pandas
+  - scipy
   - matplotlib
   - scikit-learn
+  - statsmodels
+  - patsy
   - jupyter
+  - ipykernel
+  - ipywidgets
+  - openpyxl
+  - tqdm
   - transformers
   - accelerate
   - torchaudio
