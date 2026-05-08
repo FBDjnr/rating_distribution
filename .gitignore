@@ -42,6 +42,7 @@ dist/
 # Project data and generated files
 Data/
 Outputs/
+meeting_notes/
 Manuscript/*.zip
 Manuscript/*.pdf
 Manuscript/*.docx
