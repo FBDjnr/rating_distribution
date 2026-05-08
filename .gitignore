@@ -6,7 +6,8 @@ Icon?
 ._*
 
 # Local editor settings
-.vscode/
+.vscode/*
+!.vscode/settings.json
 .idea/
 
 # Python
@@ -16,6 +17,7 @@ __pycache__/
 .python-version
 
 # Virtual environments
+.conda/
 .venv/
 venv/
 env/

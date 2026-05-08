@@ -41,6 +41,7 @@ dependencies:
   - debugpy=1.8.20
   - decorator=5.2.1
   - defusedxml=0.7.1
+  - et_xmlfile=2.0.0
   - exceptiongroup=1.3.1
   - executing=2.2.1
   - ffmpeg=8.1.0
@@ -194,6 +195,7 @@ dependencies:
   - openfst=1.8.4
   - openh264=2.6.0
   - openjpeg=2.5.4
+  - openpyxl=3.1.5
   - openssl=3.6.2
   - optree=0.19.0
   - overrides=7.7.0
@@ -202,6 +204,7 @@ dependencies:
   - pandocfilters=1.5.0
   - pango=1.56.4
   - parso=0.8.6
+  - patsy=1.0.2
   - pcre2=10.47
   - pexpect=4.9.0
   - pillow=12.2.0
@@ -261,6 +264,7 @@ dependencies:
   - soupsieve=2.8.3
   - spirv-tools=2026.1
   - stack_data=0.6.3
+  - statsmodels=0.14.6
   - svt-av1=4.0.1
   - sympy=1.14.0
   - tbb=2023.0.0
