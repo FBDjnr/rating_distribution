@@ -1,0 +1,83 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "start session",
+      "type": "shell",
+      "command": "sh",
+      "args": [
+        "${workspaceFolder}/scripts/start-session.sh"
+      ],
+      "windows": {
+        "command": "powershell",
+        "args": [
+          "-NoProfile",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-File",
+          "${workspaceFolder}\\scripts\\start-session.ps1"
+        ]
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "label": "star session",
+      "type": "shell",
+      "command": "sh",
+      "args": [
+        "${workspaceFolder}/scripts/start-session.sh"
+      ],
+      "windows": {
+        "command": "powershell",
+        "args": [
+          "-NoProfile",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-File",
+          "${workspaceFolder}\\scripts\\start-session.ps1"
+        ]
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "label": "end session",
+      "type": "shell",
+      "command": "sh",
+      "args": [
+        "${workspaceFolder}/scripts/end-session.sh",
+        "Manual VS Code end session",
+        "--chat-summary",
+        "Ended from the VS Code task runner. Check the latest session log for details."
+      ],
+      "windows": {
+        "command": "powershell",
+        "args": [
+          "-NoProfile",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-File",
+          "${workspaceFolder}\\scripts\\end-session.ps1",
+          "Manual VS Code end session",
+          "--chat-summary",
+          "Ended from the VS Code task runner. Check the latest session log for details."
+        ]
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      }
+    }
+  ]
+}

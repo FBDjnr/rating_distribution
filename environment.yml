@@ -1,18 +1,26 @@
 name: rating-dist-env
 channels:
+  - defaults
+  - https://repo.anaconda.com/pkgs/main
+  - https://repo.anaconda.com/pkgs/r
+  - https://repo.anaconda.com/pkgs/msys2
   - conda-forge
 dependencies:
-  - python=3.12
-  - numpy
   - pandas
-  - scipy
-  - matplotlib
-  - scikit-learn
-  - statsmodels
-  - patsy
   - jupyter
-  - ipykernel
-  - openpyxl
+  - patsy
+  - python=3.12
+  - setuptools
   - tqdm
   - transformers
   - pytorch
+  - accelerate
+  - torchvision
+  - statsmodels
+  - ipywidgets
+  - openpyxl
+  - matplotlib
+  - torchaudio
+  - ipykernel
+  - scikit-learn
+  - numpy

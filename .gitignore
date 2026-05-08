@@ -8,6 +8,7 @@ Icon?
 # Local editor settings
 .vscode/*
 !.vscode/settings.json
+!.vscode/tasks.json
 .idea/
 
 # Python
