@@ -3,6 +3,8 @@ setlocal
 
 set "SCRIPT_DIR=%~dp0"
 set "RUNNER=%SCRIPT_DIR%start-session.py"
+if not defined PYTHONIOENCODING set "PYTHONIOENCODING=utf-8"
+if not defined PYTHONUTF8 set "PYTHONUTF8=1"
 
 python --version >nul 2>nul
 if %ERRORLEVEL% EQU 0 (
@@ -22,22 +24,17 @@ if %ERRORLEVEL% EQU 0 (
   exit /b %ERRORLEVEL%
 )
 
-conda run -n base python --version >nul 2>nul
-if %ERRORLEVEL% EQU 0 (
-  conda run -n base python "%RUNNER%" %*
-  exit /b %ERRORLEVEL%
-)
-
-mamba run -n base python --version >nul 2>nul
-if %ERRORLEVEL% EQU 0 (
-  mamba run -n base python "%RUNNER%" %*
-  exit /b %ERRORLEVEL%
-)
-
-micromamba run -n base python --version >nul 2>nul
-if %ERRORLEVEL% EQU 0 (
-  micromamba run -n base python "%RUNNER%" %*
-  exit /b %ERRORLEVEL%
+for %%T in (conda mamba micromamba) do (
+  for /f "usebackq delims=" %%B in (`%%T info --base 2^>nul`) do (
+    if exist "%%B\python.exe" (
+      "%%B\python.exe" "%RUNNER%" %*
+      exit /b %ERRORLEVEL%
+    )
+    if exist "%%B\bin\python.exe" (
+      "%%B\bin\python.exe" "%RUNNER%" %*
+      exit /b %ERRORLEVEL%
+    )
+  )
 )
 
 echo No Python launcher was found. Install Python 3 or make sure Conda's Python is on PATH.
