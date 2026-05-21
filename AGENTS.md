@@ -114,6 +114,8 @@ The workspace also includes launcher wrappers:
 - Windows Command Prompt: `scripts/end-session.cmd`
 - macOS/Linux shell: `sh scripts/end-session.sh`
 
+On Windows, prefer the launcher wrappers over calling `python` directly. The PowerShell wrapper skips Microsoft Store execution aliases before launch, preflights real `python`, `python3`, and `py` launchers with `--version`, then falls through to Conda, Mamba, or Micromamba. If Codex has a persisted approval for `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/end-session.ps1`, reuse it directly; if the wrapper is blocked by the execution environment, use the narrow Conda fallback `conda run -n base python scripts/end-session.py "TASK SUMMARY" --chat-summary "CHAT SUMMARY"` instead of retrying a failing Store-backed `python` command.
+
 The `end session` workflow should:
 
 1. Save all relevant project changes on the local machine.

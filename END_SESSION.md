@@ -42,6 +42,12 @@ Windows:
 scripts\end-session.ps1 "Short task summary" --chat-summary "Short chat summary"
 ```
 
+The PowerShell wrapper skips Microsoft Store execution aliases before launch, checks real `python`, `python3`, and `py` launchers with `--version`, and uses Conda when needed. In Codex, reuse the persisted approval for the PowerShell wrapper when available; if the wrapper is blocked by the execution environment, use:
+
+```powershell
+conda run -n base python scripts/end-session.py "Short task summary" --chat-summary "Short chat summary"
+```
+
 macOS or Linux:
 
 ```bash
